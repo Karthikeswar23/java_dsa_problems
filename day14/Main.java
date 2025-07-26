@@ -101,7 +101,9 @@ public class Main{
   public static void main(String[] args){
     LinkedList ob = new LinkedList();
     Scanner sc = new Scanner(System.in);
-    while(true){
+    int choice = 0;
+    while(choice<7){
+        System.out.println();
       System.out.println("Enter 1 to insert at begin");
       System.out.println("Enter 2 to insert at end");
       System.out.println("Enter 3 to delete at end");
@@ -109,36 +111,44 @@ public class Main{
       System.out.println("Enter 5 to delete at begin");
       System.out.println("Enter 6 to traverse the LinkedList");
       System.out.println("Enter 7 to exit");
-      int choice = sc.nextInt();
+      choice = sc.nextInt();
       switch(choice){
         case 1:
           System.out.print("Enter data: ");
           int data1 = sc.nextInt();
           ob.insert_at_begin(data1);
+          System.out.println();
+           ob.traversal();
           break;
         case 2:
           System.out.print("Enter data: ");
           int data2 = sc.nextInt();
           ob.insert_at_end(data2);
+          System.out.println();
+           ob.traversal();
           break;
         case 3:
           ob.delete_at_end();
+          System.out.println();
+           ob.traversal();
           break;
         case 4:
           System.out.print("Enter position and data: ");
           int pos = sc.nextInt();
           int data3 = sc.nextInt();
           ob.insert_at_position(pos, data3);
+          System.out.println();
+           ob.traversal();
           break;
         case 5:
           ob.delete_at_begin();
+          System.out.println();
+           ob.traversal();
           break;
         case 6:
           ob.traversal();
+          System.out.println();
           break;
-        case 7:
-          sc.close();
-          return;
         default:
           System.out.println("Invalid choice, please try again.");
       }
